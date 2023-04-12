@@ -24,7 +24,7 @@ public class DocumentTypeController {
 	@Autowired
 	private DocumentService documentService;
 	
-	@PreAuthorize("hasAnyRole({'ROLE_ONBOARDING_REVIEWER','ROLE_ONBOARDING_MANAGER'})")
+	@PreAuthorize("hasAnyRole({'ROLE_ASSOCIATE','ROLE_OFFBOARDING_REVIEWER','ROLE_OFFBOARDING_MANAGER'})")
 	@GetMapping
 	public List<DocumentTypeResponse> getAllDocumentTypesForAssociates() {
 		List<DocumentTypeEntity> documentTypeEntities = new ArrayList<>();
@@ -36,7 +36,7 @@ public class DocumentTypeController {
 		return resultList;
 	}
 	
-	@PreAuthorize("hasAnyRole({'ROLE_ONBOARDING_REVIEWER','ROLE_ONBOARDING_MANAGER'})")
+	@PreAuthorize("hasAnyRole({'ROLE_ASSOCIATE','ROLE_OFFBOARDING_REVIEWER','ROLE_OFFBOARDING_MANAGER'})")
 	@GetMapping("/sample")
     public List<DocumentTypeResponse> getSampleDocumentTypes() {
 		List<DocumentTypeEntity> documentTypeEntities =  documentService.getSampleDocumentTypes();

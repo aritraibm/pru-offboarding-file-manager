@@ -29,7 +29,7 @@ public class FileDownloadController {
 	@Autowired
 	private FileService fileService;
 	
-	@PreAuthorize("hasAnyRole({'ROLE_ONBOARDING_REVIEWER','ROLE_ONBOARDING_MANAGER'})")
+	@PreAuthorize("hasAnyRole({'ROLE_OFFBOARDING_REVIEWER','ROLE_OFFBOARDING_MANAGER'})")
 	@GetMapping("downloadFile/{fileCode}")
 	public ResponseEntity<?> downloadFile(@PathVariable("fileCode") String filecode) {
 		Resource resource = null;

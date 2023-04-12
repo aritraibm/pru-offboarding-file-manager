@@ -22,7 +22,7 @@ public class FileDeleteController {
 		this.fileService = fileService;
 	}
 
-	@PreAuthorize("hasAnyRole({'ROLE_ONBOARDING_REVIEWER','ROLE_ONBOARDING_MANAGER'})")
+	@PreAuthorize("hasAnyRole({'ROLE_OFFBOARDING_REVIEWER','ROLE_OFFBOARDING_MANAGER'})")
 	@DeleteMapping("/files/delete/{id}")
 	public ResponseEntity<String> removeOne(@PathVariable("id") String id) {
 		try {

@@ -5,11 +5,11 @@ spring:
   application:
     name: FILEMANAGER-SERVICE
   config:
-    import: optional:configserver:http://localhost:9296/
+    import: optional:configserver:http://${CNF}:9296/
   datasource:
-    url: jdbc:postgresql://database-1.c9bnvhq6g6em.ap-south-1.rds.amazonaws.com:5432/postgres
+    url: jdbc:postgresql://${PGIP}:5432/postgres
     username: postgres
-    password: adminadmin
+    password: admin
   jpa:
     properties:
       hibernate:
